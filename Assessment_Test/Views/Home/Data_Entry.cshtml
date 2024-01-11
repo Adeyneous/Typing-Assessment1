@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Data Entry Alpha Numeric Assessment";
+}
+
+<h1>Data Entry Alpha Numeric Assessment</h1>
+
+<div class="dataentry-container">
+    <div class="timer">
+        <span id="countdown">10:00</span>
+    </div>
+
+    <div class="dataentry-form-container">
+        <!-- Generated Information Form -->
+        <form class="dataentry-form dataentry-generated-info">
+            <fieldset>
+                <legend>Generated Information</legend>
+                <div class="name-group">
+                    <label>First Name: <input type="text" value="@ViewBag.GeneratedFirstName" disabled></label>
+                    <label>Last Name: <input type="text" value="@ViewBag.GeneratedLastName" disabled></label>
+                    <label>Address: <input type="text" value="@ViewBag.GeneratedAddress" disabled></label>
+                    <label>City: <input type="text" value="@ViewBag.GeneratedCity" disabled></label>
+                    <label>State: <input type="text" value="@ViewBag.GeneratedState" disabled></label>
+                    <label>Zip Code: <input type="text" value="@ViewBag.GeneratedZipCode" disabled></label>
+                    <label>Company: <input type="text" value="@ViewBag.GeneratedCompany" disabled></label>
+                    <label>Position: <input type="text" value="@ViewBag.GeneratedPosition" disabled></label>
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- User Input Form -->
+        <form class="dataentry-form dataentry-user-input" onsubmit="return false;">
+            <fieldset>
+                <legend>User Input</legend>
+                <div class="name-group">
+                    <label>First Name: <input type="text" placeholder="First Name"></label>
+                    <label>Last Name: <input type="text" placeholder="Last Name"></label>
+                    <label>Address: <input type="text" placeholder="Address"></label>
+                    <label>City: <input type="text" placeholder="City"></label>
+                    <label>State: <input type="text" placeholder="State"></label>
+                    <label>Zip Code: <input type="text" placeholder="Zip Code"></label>
+                    <label>Company: <input type="text" placeholder="Company"></label>
+                    <label>Position: <input type="text" placeholder="Position"></label>
+                </div>
+                <!-- Other input fields -->
+            </fieldset>
+        </form>
+        <button id="start-btn" class="btn-Submit" onclick="startTest()">Start</button>
+        <button id="cancel-btn" class="btn-Cancel" onclick="cancelTest()">Cancel</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/data-entry-test-script.js"></script>
+}

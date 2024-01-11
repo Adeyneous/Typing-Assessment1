@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Typing Assessment";
+}
+
+<h1>Typing Assessment</h1>
+
+<!-- Display the generated paragraph -->
+<div id="generated-paragraph-container">
+    <textarea id="generated-paragraph" disabled>
+        [Generated Paragraph Text Goes Here]
+    </textarea>
+</div>
+
+<!-- User input for typing test -->
+<div id="user-input-container">
+    <textarea id="user-input" placeholder="Type the paragraph here..." oninput="calculateWPM()" disabled></textarea>
+    <button id="start-btn" class="btn-Submit" onclick="startTest()">Start</button>
+    <button id="cancel-btn" class="btn-Cancel" onclick="cancelTest()">Cancel</button>
+</div>
+
+<!-- Display WPM and accuracy -->
+<div id="results">
+    <p>Words Per Minute: <span id="wpm">0</span></p>
+    <p>Accuracy: <span id="accuracy">100</span>%</p>
+</div>
+
+@section Scripts {
+    <script src="~/js/typing-test-script.js"></script>
+}
+
+
